@@ -1,7 +1,9 @@
-package com.example.demo.api;
+package com.example.demo.controller;
 
 import java.util.List;
 import java.util.UUID;
+
+import javax.validation.Valid;
 
 import com.example.demo.model.Person;
 import com.example.demo.service.PersonSevice;
@@ -16,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.NonNull;
+
 @RequestMapping("api/v1/person")
 @RestController
 public class PersonController {
@@ -28,7 +32,7 @@ public class PersonController {
     }
 
     @PostMapping
-    public void addPerson(@RequestBody Person person) {
+    public void addPerson(@Valid @NonNull @RequestBody Person person) {
         personSevice.addPerson(person);
     }
 
@@ -49,7 +53,8 @@ public class PersonController {
     }
 
     @PutMapping(path = "{id}")
-    public void updatePerson(@PathVariable("id") UUID id, @RequestBody Person personToUpdate) {
+    public void updatePerson(@PathVariable("id") UUID id, 
+                                @Valid @NonNull @RequestBody Person personToUpdate) {
         personSevice.updatePerson(id, personToUpdate);
     }
 
