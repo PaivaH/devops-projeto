@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender class="com.papertrailapp.logback.Syslog4jAppender" name="SYSLOG-TCP">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{MMM dd HH:mm:ss} myapp: %-5level %logger{35}: %m%n%xEx</pattern>
+        </layout>
+        <syslogConfig class="org.productivity.java.syslog4j.impl.net.tcp.TCPNetSyslogConfig">
+            <host>logs4.papertrailapp.com</host>
+            <port>46273</port>
+            <sendLocalName>false</sendLocalName>
+            <sendLocalTimestamp>false</sendLocalTimestamp>
+            <maxMessageLength>102400</maxMessageLength>
+        </syslogConfig>
+    </appender>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <logger level="warn" name="net.liftweb.mapper" />
+    <logger level="warn" name="net.liftweb.db" />
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="SYSLOG-TCP" />
+    </root>
+</configuration>

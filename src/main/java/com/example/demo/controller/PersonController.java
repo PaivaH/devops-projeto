@@ -8,6 +8,8 @@ import javax.validation.Valid;
 import com.example.demo.model.Person;
 import com.example.demo.service.PersonSevice;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +25,8 @@ import lombok.NonNull;
 @RequestMapping("api/v1/person")
 @RestController
 public class PersonController {
+
+    Logger logger = LoggerFactory.getLogger(PersonController.class);
     
     private final PersonSevice personSevice;
 
@@ -33,6 +37,7 @@ public class PersonController {
 
     @PostMapping
     public void addPerson(@Valid @NonNull @RequestBody Person person) {
+        logger.error("Ocorreu um erro");
         personSevice.addPerson(person);
     }
 
