@@ -7,13 +7,19 @@ Os testes da aplicação foram utilizando Mockito e MockMVC para testar as funci
 A seguir, os prints dos requisitos do projeto final
 
 # CRUD de pessoas
+![/devops-projeto/imagens/postman.jpg]
 
 # Actuator
+![]
 
 # Prometheus
+![]
 
 # Papertrail
+![]
 
 # Zipkin
+![]
 
-#Terraform
+# Terraform
+![]
