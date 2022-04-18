@@ -17,10 +17,10 @@ A seguir, os prints dos requisitos do projeto final
 ![](/imagens/prometheus.jpg)
 
 # Papertrail
-![](/imagens/papertrail.jpg)
+![](/imagens/Screenshot_2.jpg)
 
 # Zipkin
-![](/imagens/papertrail.jpg)
+![](/imagens/zipkin.jpg)
 ![](/imagens/zipkin2.jpg)
 
 # Terraform
