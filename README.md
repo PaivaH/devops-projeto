@@ -24,4 +24,4 @@ A seguir, os prints dos requisitos do projeto final
 ![](/imagens/zipkin2.jpg)
 
 # Terraform
-![](/imagens)
+![Terraform](https://github.com/PaivaH/devops-projeto/tree/master/terraform)
