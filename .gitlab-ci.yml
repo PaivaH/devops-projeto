@@ -31,14 +31,14 @@ test-junit-job:
     paths:
       - target/
 
-sucess-notification:
-  stage: notification
-  when: on_sucess
+sucesso-notification:
+  stage: notificacao
+  when: on_success
   script:
     - echo "Sucesso"
 
-fail-notification:
-  stage: notification
+falha-notification:
+  stage: notificacao
   when: on_failure
   script:
     - echo "Erro"
