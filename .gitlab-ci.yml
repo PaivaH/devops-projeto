@@ -7,6 +7,7 @@ cache:
 stages:
   - build
   - test
+  - notification
 
 build-job:
   stage: build
@@ -29,3 +30,15 @@ test-junit-job:
   artifacts:
     paths:
       - target/
+
+sucess-notification:
+  stage: notification
+  when: on_sucess
+  script:
+    - echo "Sucesso"
+
+fail-notification:
+  stage: notification
+  when: on_failure
+  script:
+    - echo "Erro"
