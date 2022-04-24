@@ -2,9 +2,19 @@ image: leogloria/infnet-gitlab
 
 stages:
   - build
+  - test
 
 build-job:
   stage: build
   script:
     - echo "Compilando codigo..."
     - "mvn clean compile"
+
+test-junit-job:
+  stage: test
+  dependencies:
+    - build-job
+
+  script: 
+    - echo "Testando codigo.."
+    - "mvnn package"
