@@ -32,13 +32,13 @@ test-junit-job:
       - target/
 
 sucesso-notification:
-  stage: notificacao
+  stage: notification
   when: on_success
   script:
     - echo "Sucesso"
 
 falha-notification:
-  stage: notificacao
+  stage: notification
   when: on_failure
   script:
     - echo "Erro"
