@@ -1,3 +1,5 @@
+image: leogloria/infnet-gitlab
+
 stages:
   - build
 
