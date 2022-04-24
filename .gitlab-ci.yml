@@ -1,5 +1,9 @@
 image: leogloria/infnet-gitlab
 
+cache:
+  - paths:
+    - ./m2/repository
+
 stages:
   - build
   - test
@@ -9,6 +13,9 @@ build-job:
   script:
     - echo "Compilando codigo..."
     - "mvn clean compile"
+  artifacts:
+    paths:
+      - target/
 
 test-junit-job:
   stage: test
@@ -17,4 +24,8 @@ test-junit-job:
 
   script: 
     - echo "Testando codigo.."
-    - "mvnn package"
+    - "mvn package"
+
+  artifacts:
+    paths:
+      - target/
