@@ -26,6 +26,6 @@ A seguir, os prints dos requisitos do projeto final
 # Terraform
 ![Terraform](https://github.com/PaivaH/devops-projeto/tree/master/terraform)
 
-# Gitlab Deply
+# Gitlab Deploy
 ![](/imagens/pipeline.jpg)
 ![](/imagens/jobs.jpg)
