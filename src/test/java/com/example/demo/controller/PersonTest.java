@@ -10,12 +10,8 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import io.restassured.http.ContentType;
 
 import static io.restassured.module.mockmvc.RestAssuredMockMvc.*;
-import static org.mockito.Mockito.when;
-
-import java.util.UUID;
-
-import com.example.demo.model.Person;
 import com.example.demo.service.PersonSevice;
+
 
 @WebMvcTest
 public class PersonTest {
@@ -32,12 +28,10 @@ public class PersonTest {
     }
 
     @Test
-    public void shouldReturnSucess_postPerson() {
-        when(this.personSevice.addPerson(new Person(UUID.randomUUID(), "James Bond")))
-            .thenReturn(1);
-
+    public void shouldReturnOk_postPerson() {
         given()
-            .accept(ContentType.JSON)
+            .contentType(ContentType.JSON)
+            .body("{ \"name\" : \"Jasmes Bonds\" }")
             .when()
                 .post("/api/v1/person")
             .then()
@@ -45,7 +39,7 @@ public class PersonTest {
     }
 
     @Test
-    public void shouldReturnSucess_getAllPeople() {
+    public void shouldReturnOk_getAllPeople() {
         given()
             .accept(ContentType.JSON)
             .when()
